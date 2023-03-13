@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="btnAllClear" Content="清除" HorizontalAlignment="Left" Margin="89,29,0,0" VerticalAlignment="Top" FontSize="20" Width="120" FontFamily="Corbel" Height="40"/>
+        <Button x:Name="btnAllClear" Content="清除" HorizontalAlignment="Left" Margin="89,29,0,0" VerticalAlignment="Top" FontSize="20" Width="120" FontFamily="Corbel" Height="40" Click="btnAllClear_Click"/>
         <Label Content="英吋" HorizontalAlignment="Left" Margin="89,183,0,0" VerticalAlignment="Top" Width="68" Height="34" FontSize="20" FontFamily="Arial"/>
         <Label Content="公尺" HorizontalAlignment="Left" Margin="322,89,0,0" VerticalAlignment="Top" Width="68" Height="34" FontSize="20" FontFamily="Arial"/>
         <Label Content="公里" HorizontalAlignment="Left" Margin="554,89,0,0" VerticalAlignment="Top" Width="68" Height="34" FontSize="20" FontFamily="Arial"/>
@@ -21,8 +21,8 @@
         <TextBox x:Name="txtCM" HorizontalAlignment="Left" Margin="89,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" FontSize="16" KeyUp="txtCM_KeyUp"/>
         <TextBox HorizontalAlignment="Left" Margin="89,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" FontSize="16"/>
         <TextBox x:Name="txtInfo" HorizontalAlignment="Left" Margin="89,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="585" Height="48" FontSize="16"/>
-        <TextBox x:Name="txtKM" HorizontalAlignment="Left" Margin="554,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" FontSize="16"/>
-        <TextBox x:Name="txtM" HorizontalAlignment="Left" Margin="322,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" FontSize="16"/>
+        <TextBox x:Name="txtKM" HorizontalAlignment="Left" Margin="554,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" FontSize="16" KeyUp="txtKM_KeyUp"/>
+        <TextBox x:Name="txtM" HorizontalAlignment="Left" Margin="322,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" FontSize="16" KeyUp="txtM_KeyUp"/>
         <Label Content="公分" HorizontalAlignment="Left" Margin="89,89,0,0" VerticalAlignment="Top" Width="68" Height="34" FontSize="20" FontFamily="Arial"/>
         <Label Content="英碼" HorizontalAlignment="Left" Margin="554,183,0,0" VerticalAlignment="Top" Width="68" Height="34" FontSize="20" FontFamily="Arial"/>
 
