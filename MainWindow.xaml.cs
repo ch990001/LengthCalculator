@@ -81,17 +81,17 @@ namespace LengthCalculator
         {
             double douIn;
 
-            douIn = Convert.ToDouble(txtKM.Text);
+            douIn = Convert.ToDouble(txtIn.Text);
 
             txtCM.Text = string.Format("{0:0.##########}", douIn * 2.54);
 
             txtM.Text = string.Format("{0:0.##########}", douIn * 0.0254);
 
-            txtKM.Text = string.Format("{0:0.##########}", douIn * 0.0000254);
+            txtKM.Text = string.Format("{0:0.##########}", douIn * 0.00003);
 
-            txtFt.Text = string.Format("{0:0.##########}", douIn * 0.0833);
+            txtFt.Text = string.Format("{0:0.##########}", douIn * 0.08333);
 
-            txtYard.Text = string.Format("{0:0.##########}", douIn * 0.0278);
+            txtYard.Text = string.Format("{0:0.##########}", douIn * 0.02778);
         }
 
         private void txtFt_KeyUp(object sender, KeyEventArgs e)
@@ -100,15 +100,15 @@ namespace LengthCalculator
 
             douFt = Convert.ToDouble(txtFt.Text);
 
-            txtCM.Text = string.Format("{0:0.##########}", douFt * 30.48);
+            txtCM.Text = string.Format("{0:0.##########}", douFt * 30.4801);
 
             txtM.Text = string.Format("{0:0.##########}", douFt * 0.3048);
 
-            txtKM.Text = string.Format("{0:0.##########}", douFt * 0.0003048);
+            txtKM.Text = string.Format("{0:0.##########}", douFt * 0.00031);
 
             txtIn.Text = string.Format("{0:0.##########}", douFt * 12);
 
-            txtYard.Text = string.Format("{0:0.##########}", douFt * 0.3333);
+            txtYard.Text = string.Format("{0:0.##########}", douFt * 0.33333);
         }
 
         private void txtYard_KeyUp(object sender, KeyEventArgs e)
@@ -117,11 +117,11 @@ namespace LengthCalculator
 
             douYard = Convert.ToDouble(txtYard.Text);
 
-            txtCM.Text = string.Format("{0:0.##########}", douYard * 91.44);
+            txtCM.Text = string.Format("{0:0.##########}", douYard * 91.4402);
 
             txtM.Text = string.Format("{0:0.##########}", douYard * 0.9144);
 
-            txtKM.Text = string.Format("{0:0.##########}", douYard * 0.0009144);
+            txtKM.Text = string.Format("{0:0.##########}", douYard * 0.00091);
 
             txtIn.Text = string.Format("{0:0.##########}", douYard * 36);
 
