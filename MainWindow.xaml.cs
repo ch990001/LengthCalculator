@@ -35,11 +35,11 @@ namespace LengthCalculator
 
             txtKM.Text = string.Format("{0:0.##########}", douCM / 100000);
             
-            txtIn.Text = string.Format("{0:0.##########}", douCM / 2.54);
+            txtIn.Text = string.Format("{0:0.#####}", douCM / 2.54);
 
-            txtFt.Text = string.Format("{0:0.##########}", douCM / 30.48);
+            txtFt.Text = string.Format("{0:0.####}", douCM / 30.48);
 
-            txtYard.Text = string.Format("{0:0.##########}", douCM / 91.44);
+            txtYard.Text = string.Format("{0:0.####}", douCM / 91.44);
 
         }
 
@@ -55,9 +55,9 @@ namespace LengthCalculator
 
             txtIn.Text = string.Format("{0:0.##########}", douM * 39.37);
 
-            txtFt.Text = string.Format("{0:0.##########}", douM * 3.28);
+            txtFt.Text = string.Format("{0:0.##########}", douM * 3.28084);
 
-            txtYard.Text = string.Format("{0:0.##########}", douM * 1.09);
+            txtYard.Text = string.Format("{0:0.##########}", douM * 1.09361);
         }
 
         private void txtKM_KeyUp(object sender, KeyEventArgs e)
