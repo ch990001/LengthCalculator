@@ -20,6 +20,9 @@ namespace LengthCalculator
     /// </summary>
     public partial class MainWindow : Window
     {
+        string strInput;
+        double douOutput;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,54 +30,74 @@ namespace LengthCalculator
 
         private void txtCM_KeyUp(object sender, KeyEventArgs e)
         {
-            double douCM;
+            strInput = txtCM.Text;
 
-            douCM = Convert.ToDouble(txtCM.Text);
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                txtM.Text = string.Format("{0:0.##########}", douOutput / 100);
 
-            txtM.Text = string.Format("{0:0.##########}", douCM / 100);
+                txtKM.Text = string.Format("{0:0.##########}", douOutput / 100000);
 
-            txtKM.Text = string.Format("{0:0.##########}", douCM / 100000);
-            
-            txtIn.Text = string.Format("{0:0.#####}", douCM / 2.54);
+                txtIn.Text = string.Format("{0:0.##########}", douOutput / 2.54);
 
-            txtFt.Text = string.Format("{0:0.####}", douCM / 30.48);
+                txtFt.Text = string.Format("{0:0.##########}", douOutput / 30.48);
 
-            txtYard.Text = string.Format("{0:0.####}", douCM / 91.44);
+                txtYard.Text = string.Format("{0:0.##########}", douOutput / 91.44);
+            }
+            else
+            {
+                txtInfo.Text = "輸入錯誤，請輸入數字";
+                txtCM.Text = "";
+            }
 
         }
 
         private void txtM_KeyUp(object sender, KeyEventArgs e)
         {
-            double douM;
+            strInput = txtM.Text;
 
-            douM = Convert.ToDouble(txtM.Text);
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
 
-            txtCM.Text = string.Format("{0:0.##########}", douM * 100);
+                txtCM.Text = string.Format("{0:0.##########}", douOutput * 100);
 
-            txtKM.Text = string.Format("{0:0.##########}", douM * 0.001);
+                txtKM.Text = string.Format("{0:0.##########}", douOutput * 0.001);
 
-            txtIn.Text = string.Format("{0:0.##########}", douM * 39.37);
+                txtIn.Text = string.Format("{0:0.##########}", douOutput * 39.37);
 
-            txtFt.Text = string.Format("{0:0.##########}", douM * 3.28084);
+                txtFt.Text = string.Format("{0:0.##########}", douOutput * 3.28084);
 
-            txtYard.Text = string.Format("{0:0.##########}", douM * 1.09361);
+                txtYard.Text = string.Format("{0:0.##########}", douOutput * 1.09361);
+            }
+            else
+            {
+                txtInfo.Text = "輸入錯誤，請輸入數字";
+                txtM.Text = "";
+            }
         }
 
         private void txtKM_KeyUp(object sender, KeyEventArgs e)
         {
-            double douKM;
+            strInput = txtKM.Text;
 
-            douKM = Convert.ToDouble(txtKM.Text);
+            if (double.TryParse(strInput, out douOutput) == true) 
+            { 
 
-            txtCM.Text = string.Format("{0:0.##########}", douKM * 100);
+                txtCM.Text = string.Format("{0:0.##########}", douOutput * 100);
 
-            txtM.Text = string.Format("{0:0.##########}", douKM * 1000);
+                txtM.Text = string.Format("{0:0.##########}", douOutput * 1000);
 
-            txtIn.Text = string.Format("{0:0.##########}", douKM * 39370.1);
+                txtIn.Text = string.Format("{0:0.##########}", douOutput * 39370.1);
 
-            txtFt.Text = string.Format("{0:0.##########}", douKM * 3280.84);
+                txtFt.Text = string.Format("{0:0.##########}", douOutput * 3280.84);
 
-            txtYard.Text = string.Format("{0:0.##########}", douKM * 1093.61);
+                txtYard.Text = string.Format("{0:0.##########}", douOutput * 1093.61);
+            }
+            else
+            {
+                txtInfo.Text = "輸入錯誤，請輸入數字";
+                txtKM.Text = "";
+            }
         }
 
         private void txtIn_KeyUp(object sender, KeyEventArgs e)
