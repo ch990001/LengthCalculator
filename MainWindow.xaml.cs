@@ -34,6 +34,13 @@ namespace LengthCalculator
             txtM.Text = string.Format("{0:0.##########}", douCM / 100);
 
             txtKM.Text = string.Format("{0:0.##########}", douCM / 100000);
+            
+            txtIn.Text = string.Format("{0:0.##########}", douCM / 2.54);
+
+            txtFt.Text = string.Format("{0:0.##########}", douCM / 30.48);
+
+            txtYard.Text = string.Format("{0:0.##########}", douCM / 91.44);
+
         }
 
         private void txtM_KeyUp(object sender, KeyEventArgs e)
@@ -58,11 +65,16 @@ namespace LengthCalculator
             txtM.Text = string.Format("{0:0.##########}", douKM / 0.001);
         }
 
+
         private void btnAllClear_Click(object sender, RoutedEventArgs e)
         {
             txtCM.Text = "";
             txtM.Text = "";
             txtKM.Text = "";
+            txtIn.Text = "";
+            txtFt.Text = "";
+            txtYard.Text = "";
         }
+
     }
 }
