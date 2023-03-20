@@ -14,12 +14,12 @@
         <TextBox HorizontalAlignment="Left" Margin="89,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="26"/>
         <TextBox HorizontalAlignment="Left" Margin="89,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="26"/>
         <TextBox HorizontalAlignment="Left" Margin="89,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="26"/>
-        <TextBox x:Name="txtYard" HorizontalAlignment="Left" Margin="554,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" FontSize="16"/>
-        <TextBox x:Name="txtFt" HorizontalAlignment="Left" Margin="322,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" FontSize="16"/>
+        <TextBox x:Name="txtYard" HorizontalAlignment="Left" Margin="554,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" FontSize="16" KeyUp="txtYard_KeyUp"/>
+        <TextBox x:Name="txtFt" HorizontalAlignment="Left" Margin="322,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" FontSize="16" KeyUp="txtFt_KeyUp"/>
         <Label Content="說明文字" HorizontalAlignment="Left" Margin="89,266,0,0" VerticalAlignment="Top" Width="151" Height="34" FontSize="20" FontFamily="Arial"/>
         <Label Content="英呎" HorizontalAlignment="Left" Margin="322,183,0,0" VerticalAlignment="Top" Width="68" Height="34" FontSize="20" FontFamily="Arial"/>
         <TextBox x:Name="txtCM" HorizontalAlignment="Left" Margin="89,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" FontSize="16" KeyUp="txtCM_KeyUp"/>
-        <TextBox x:Name="txtIn" HorizontalAlignment="Left" Margin="89,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" FontSize="16" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="txtIn" HorizontalAlignment="Left" Margin="89,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" FontSize="16" KeyUp="txtIn_KeyUp"/>
         <TextBox x:Name="txtInfo" HorizontalAlignment="Left" Margin="89,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="585" Height="48" FontSize="16"/>
         <TextBox x:Name="txtKM" HorizontalAlignment="Left" Margin="554,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" FontSize="16" KeyUp="txtKM_KeyUp"/>
         <TextBox x:Name="txtM" HorizontalAlignment="Left" Margin="322,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" FontSize="16" KeyUp="txtM_KeyUp"/>
