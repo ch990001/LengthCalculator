@@ -28,21 +28,29 @@ namespace LengthCalculator
             InitializeComponent();
         }
 
+        private void caculateAnswer(int _kind, double _value)
+        {
+            if (_kind != 0)
+                txtCM.Text = string.Format("{0:0.##########}", _value);
+            if (_kind != 1)
+                txtM.Text = string.Format("{0:0.##########}", _value / 100);
+            if (_kind != 2)
+                txtKM.Text = string.Format("{0:0.##########}", _value / 100000);
+            if (_kind != 3)
+                txtIn.Text = string.Format("{0:0.##########}", _value / 2.54);
+            if (_kind != 4)
+                txtFt.Text = string.Format("{0:0.##########}", _value / 30.48);
+            if (_kind != 5)
+                txtYard.Text = string.Format("{0:0.##########}", _value / 91.44);
+        }
+
         private void txtCM_KeyUp(object sender, KeyEventArgs e)
         {
             strInput = txtCM.Text;
 
             if (double.TryParse(strInput, out douOutput) == true)
             {
-                txtM.Text = string.Format("{0:0.##########}", douOutput / 100);
-
-                txtKM.Text = string.Format("{0:0.##########}", douOutput / 100000);
-
-                txtIn.Text = string.Format("{0:0.##########}", douOutput / 2.54);
-
-                txtFt.Text = string.Format("{0:0.##########}", douOutput / 30.48);
-
-                txtYard.Text = string.Format("{0:0.##########}", douOutput / 91.44);
+                caculateAnswer(0, douOutput);
             }
             else
             {
@@ -58,16 +66,7 @@ namespace LengthCalculator
 
             if (double.TryParse(strInput, out douOutput) == true)
             {
-
-                txtCM.Text = string.Format("{0:0.##########}", douOutput * 100);
-
-                txtKM.Text = string.Format("{0:0.##########}", douOutput * 0.001);
-
-                txtIn.Text = string.Format("{0:0.##########}", douOutput * 39.37);
-
-                txtFt.Text = string.Format("{0:0.##########}", douOutput * 3.28084);
-
-                txtYard.Text = string.Format("{0:0.##########}", douOutput * 1.09361);
+                caculateAnswer(1, douOutput * 100);
             }
             else
             {
@@ -81,17 +80,8 @@ namespace LengthCalculator
             strInput = txtKM.Text;
 
             if (double.TryParse(strInput, out douOutput) == true) 
-            { 
-
-                txtCM.Text = string.Format("{0:0.##########}", douOutput * 100);
-
-                txtM.Text = string.Format("{0:0.##########}", douOutput * 1000);
-
-                txtIn.Text = string.Format("{0:0.##########}", douOutput * 39370.1);
-
-                txtFt.Text = string.Format("{0:0.##########}", douOutput * 3280.84);
-
-                txtYard.Text = string.Format("{0:0.##########}", douOutput * 1093.61);
+            {
+                caculateAnswer(2, douOutput * 100000);
             }
             else
             {
@@ -102,53 +92,47 @@ namespace LengthCalculator
 
         private void txtIn_KeyUp(object sender, KeyEventArgs e)
         {
-            double douIn;
+            strInput = txtIn.Text;
 
-            douIn = Convert.ToDouble(txtIn.Text);
-
-            txtCM.Text = string.Format("{0:0.##########}", douIn * 2.54);
-
-            txtM.Text = string.Format("{0:0.##########}", douIn * 0.0254);
-
-            txtKM.Text = string.Format("{0:0.##########}", douIn * 0.00003);
-
-            txtFt.Text = string.Format("{0:0.##########}", douIn * 0.08333);
-
-            txtYard.Text = string.Format("{0:0.##########}", douIn * 0.02778);
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                caculateAnswer(3, douOutput * 2.54);
+            }
+            else
+            {
+                txtInfo.Text = "輸入錯誤，請輸入數字";
+                txtIn.Text = "";
+            }
         }
 
         private void txtFt_KeyUp(object sender, KeyEventArgs e)
         {
-            double douFt;
+            strInput = txtFt.Text;
 
-            douFt = Convert.ToDouble(txtFt.Text);
-
-            txtCM.Text = string.Format("{0:0.##########}", douFt * 30.4801);
-
-            txtM.Text = string.Format("{0:0.##########}", douFt * 0.3048);
-
-            txtKM.Text = string.Format("{0:0.##########}", douFt * 0.00031);
-
-            txtIn.Text = string.Format("{0:0.##########}", douFt * 12);
-
-            txtYard.Text = string.Format("{0:0.##########}", douFt * 0.33333);
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                caculateAnswer(4, douOutput * 30.48);
+            }
+            else
+            {
+                txtInfo.Text = "輸入錯誤，請輸入數字";
+                txtFt.Text = "";
+            }
         }
 
         private void txtYard_KeyUp(object sender, KeyEventArgs e)
         {
-            double douYard;
+            strInput = txtYard.Text;
 
-            douYard = Convert.ToDouble(txtYard.Text);
-
-            txtCM.Text = string.Format("{0:0.##########}", douYard * 91.4402);
-
-            txtM.Text = string.Format("{0:0.##########}", douYard * 0.9144);
-
-            txtKM.Text = string.Format("{0:0.##########}", douYard * 0.00091);
-
-            txtIn.Text = string.Format("{0:0.##########}", douYard * 36);
-
-            txtFt.Text = string.Format("{0:0.##########}", douYard * 3);
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                caculateAnswer(5, douOutput * 91.44);
+            }
+            else
+            {
+                txtInfo.Text = "輸入錯誤，請輸入數字";
+                txtYard.Text = "";
+            }
         }
 
         private void btnAllClear_Click(object sender, RoutedEventArgs e)
